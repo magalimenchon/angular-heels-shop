@@ -9,26 +9,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr *ngFor="let heel of heels" [ngClass]="{'clearence': heel.clearence}">
         <th scope="row"><img [src]="heel.image" class="figure-img img-fluid rounded" [alt]="heel.image" ></th>
         <td>{{heel.name}}</td>
         <td>{{heel.type}}</td>
-        <td>{{heel.price}}</td>
-        <td>{{heel.stock}}</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>COSMOPOLE SUEDE ANKLE BOOTS MOCA OPEN TOES</td>
-        <td>BOOTS</td>
-        <td>$85.000</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>COSMOPOLE SUEDE SANDALS WITH CLIP LIGHT BROWN</td>
-        <td>SANDALS</td>
-        <td>$70.000</td>
-        <td>5</td>
+        <td>{{heel.price | currency}}</td>
+        <td><span class="badge text-bg-warning" *ngIf="heel.stock === 0">SIN STOCK</span></td>
       </tr>
     </tbody>
   </table>
