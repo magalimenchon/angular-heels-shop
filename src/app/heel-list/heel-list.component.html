@@ -6,15 +6,23 @@
         <th scope="col">Type</th>
         <th scope="col">Price</th>
         <th scope="col">Stock</th>
+        <th scope="col">Buy</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let heel of heels" [ngClass]="{'clearence': heel.clearence}">
-        <th scope="row"><img [src]="heel.image" class="figure-img img-fluid rounded" [alt]="heel.image" ></th>
+        <th scope="row"><img width="900" [src]="heel.image" class="figure-img img-fluid rounded" [alt]="heel.image" ></th>
         <td>{{heel.name}}</td>
         <td>{{heel.type}}</td>
         <td>{{heel.price | currency}}</td>
         <td><span class="badge text-bg-warning" *ngIf="heel.stock === 0">SIN STOCK</span></td>
+        <td width="100">
+          <button class="btn btn-primary btn-sm" (click)="downQuantity(heel)">-</button>
+          <!-- CONTROL DESDE EL INPUT -->
+          <!-- <input type="number" min="0" [max]="heel.stock" [(ngModel)]="heel.quantity">-->
+          <input type="text" [(ngModel)]="heel.quantity" (keyup)="changeQuantity($event, heel)">
+          <button class="btn btn-primary btn-sm" (click)="upQuantity(heel)">+</button>
+        </td>
       </tr>
     </tbody>
   </table>

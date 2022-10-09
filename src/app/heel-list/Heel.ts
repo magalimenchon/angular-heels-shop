@@ -5,4 +5,5 @@ export interface Heel {
     stock: number;
     image: string;
     clearence: boolean;
+    quantity: number;
 }
