@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { HeelListComponent } from './heel-list/heel-list.component';
 import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
+import { HeelsShopAboutComponent } from './heels-shop-about/heels-shop-about.component';
+import { HeelsShopHeelsComponent } from './heels-shop-heels/heels-shop-heels.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeelListComponent,
-    CartComponent
+    CartComponent,
+    HeelsShopAboutComponent,
+    HeelsShopHeelsComponent
   ],
   imports: [
     BrowserModule,
