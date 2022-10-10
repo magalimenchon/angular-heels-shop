@@ -31,7 +31,7 @@ export class HeelListComponent implements OnInit {
       name: 'COSMOPOLE SUEDE SANDALS WITH CLIP LIGHT BROWN',
       type: 'SANDALS',
       price: 70000,
-      stock: 5,
+      stock: 0,
       image:'assets/images/3.jpg',
       clearence: false,
       quantity: 0,
@@ -43,21 +43,11 @@ export class HeelListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  upQuantity(heel: Heel): void {
-    if(heel.quantity < heel.stock)
-      heel.quantity++;
-  }
-
-  downQuantity(heel: Heel): void {
-    if(heel.quantity > 0)
-      heel.quantity--;
-  }
-
-  changeQuantity(event: KeyboardEvent, heel: Heel): void{
-    console.log(event.keyCode);
-    if(event.keyCode < 48 || event.keyCode > 57){
-      event.preventDefault();
-    }
+  /**
+   * EL EVENT ES DEL MAX ASOCIADO DE input-integer-component
+   */
+  maxReached(message: string): void{
+    alert(message);
   }
 
 }
