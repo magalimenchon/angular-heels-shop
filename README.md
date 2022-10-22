@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
+## MOCK API REST
+
+ENDPOINT: 'https://635461e6ccce2f8c0207f7f7.mockapi.io/heels'
+<br/>
+Method: GET
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
