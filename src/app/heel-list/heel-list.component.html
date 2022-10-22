@@ -6,6 +6,7 @@
         <th scope="col">Type</th>
         <th scope="col">Price</th>
         <th scope="col">Stock</th>
+        <th scope="col">Quantity</th>
         <th scope="col">Buy</th>
       </tr>
     </thead>
@@ -19,6 +20,9 @@
         <td>
           <app-input-integer [(quantity)]="heel.quantity" [max]="heel.stock" (maxReached)="maxReached($event)"  *ngIf="heel.stock"></app-input-integer>
           Cant: {{heel.quantity}}
+        </td>
+        <td>
+          <button class="btn btn-primary" (click)="addToCart(heel)">Buy</button>
         </td>
       </tr>
     </tbody>

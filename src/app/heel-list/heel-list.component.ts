@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeelCartService } from '../heel-cart.service';
 import { Heel } from './Heel';
 
 @Component({
@@ -38,9 +39,16 @@ export class HeelListComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor(private cartService: HeelCartService) { 
+  }
 
   ngOnInit(): void {
+  }
+
+  addToCart(heel: Heel): void{
+    this.cartService.addToCart(heel);
+    heel.stock -= heel.quantity;
+    heel.quantity = 0;
   }
 
   /**
