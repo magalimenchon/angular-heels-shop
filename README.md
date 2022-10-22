@@ -4,7 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## MOCK API REST
 
-ENDPOINT: 'https://635461e6ccce2f8c0207f7f7.mockapi.io/heels'
+ENDPOINT: 
+<br/>
+https://635461e6ccce2f8c0207f7f7.mockapi.io/heels
 <br/>
 Method: GET
 
