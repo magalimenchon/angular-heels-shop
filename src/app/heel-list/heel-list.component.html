@@ -12,17 +12,17 @@
     </thead>
     <tbody>
       <tr *ngFor="let heel of heels" [ngClass]="{'clearence': heel.clearence}">
-        <th scope="row"><img width=10000 [src]="heel.image" class="figure-img img-fluid rounded" [alt]="heel.image" ></th>
+        <th scope="row"><img [src]="heel.image" class="figure-img img-fluid rounded" [alt]="heel.image" ></th>
         <td>{{heel.name}}</td>
         <td>{{heel.type}}</td>
         <td>{{heel.price | currency}}</td>
         <td><span class="badge text-bg-warning" *ngIf="heel.stock == 0">SIN STOCK</span></td>
         <td>
           <app-input-integer [(quantity)]="heel.quantity" [max]="heel.stock" (maxReached)="maxReached($event)"  *ngIf="heel.stock"></app-input-integer>
-          Cant: {{heel.quantity}}
+          Cant seleccionada: {{heel.quantity}}
         </td>
         <td>
-          <button class="btn btn-primary" (click)="addToCart(heel)">Buy</button>
+          <button class="btn btn-primary" *ngIf="heel.stock != 0" (click)="addToCart(heel)">Buy</button>
         </td>
       </tr>
     </tbody>

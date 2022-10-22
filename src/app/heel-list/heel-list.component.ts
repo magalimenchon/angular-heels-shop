@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeelCartService } from '../heel-cart.service';
+import { HeelDataService } from '../heel-data.service';
 import { Heel } from './Heel';
 
 @Component({
@@ -9,40 +10,19 @@ import { Heel } from './Heel';
 })
 export class HeelListComponent implements OnInit {
 
-  heels: Heel[] = [
-    {
-      name: 'COSMOPOLE HIGH BOOTS',
-      type: 'BOOTS',
-      price: 90000,
-      stock: 1,
-      image:'assets/images/1.jpg',
-      clearence: true,
-      quantity: 0,
-    },
-    {
-      name: 'COSMOPOLE SUEDE ANKLE BOOTS MOCA OPEN TOES',
-      type: 'BOOTS',
-      price: 85000,
-      stock: 8,
-      image:'assets/images/2.jpg',
-      clearence: false,
-      quantity: 0,
-    },
-    {
-      name: 'COSMOPOLE SUEDE SANDALS WITH CLIP LIGHT BROWN',
-      type: 'SANDALS',
-      price: 70000,
-      stock: 0,
-      image:'assets/images/3.jpg',
-      clearence: false,
-      quantity: 0,
-    },
-  ]
+  heels: Heel[] = [];
 
-  constructor(private cartService: HeelCartService) { 
+  constructor(
+    private cartService: HeelCartService,
+    private heelsDataService: HeelDataService) { 
   }
 
   ngOnInit(): void {
+    this.heelsDataService.getAll()
+    //.subscribe(data => );
+    .subscribe(heelsFromMockDataService => this.heels = heelsFromMockDataService); 
+    //mi arreglo de heels se convierte en el que viene del servicio (API)
+
   }
 
   addToCart(heel: Heel): void{

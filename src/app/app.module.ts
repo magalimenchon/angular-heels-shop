@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeelListComponent } from './heel-list/heel-list.component';
 import { CartComponent } from './cart/cart.component';
+
+import { HttpClientModule } from '@angular/common/http';
+
 import { FormsModule } from '@angular/forms';
 import { HeelsShopAboutComponent } from './heels-shop-about/heels-shop-about.component';
 import { HeelsShopHeelsComponent } from './heels-shop-heels/heels-shop-heels.component';
@@ -22,7 +25,8 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
