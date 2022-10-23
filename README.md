@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
 
+## Stackblitz
+
+Access: https://angular-ivy-fqjjgj.stackblitz.io/
+
 ## MOCK API REST
 
 ENDPOINT: 
